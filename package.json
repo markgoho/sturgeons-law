@@ -2,8 +2,15 @@
   "name": "sturgeons-law",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "cd hugo && hugo server --disableFastRender",
+    "build": "cd hugo && hugo --minify",
+    "build:local": "rm -rf public && npm run build",
+    "deploy": "firebase deploy --only hosting"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "firebase-tools": "^13.1.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
